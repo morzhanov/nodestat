@@ -1,0 +1,26 @@
+nodes:
+  eth:
+    service: eth
+    port: 80
+    rpc_path: /rpc
+    namespace: blockchains
+  bsc:
+    service: bsc
+    port: 80
+    rpc_path: /rpc
+    namespace: blockchains
+  poly:
+    service: polygon
+    port: 80
+    rpc_path: /rpc
+    namespace: blockchains
+  arb:
+    service: arb
+    port: 80
+    rpc_path: /rpc
+    namespace: blockchains
+public_apis:
+  eth: https://api.etherscan.io/api
+  bsc: https://api.bscscan.com/api
+  arb: https://api.arbiscan.io/api
+  poly: https://api.polygonscan.com/api

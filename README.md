@@ -10,6 +10,9 @@ nodestat <eth|bsc|poly|arb|all>
 
 First argument is node name or show stats for all nodes.
 
+## Config
+
+Config should be put in the ~/bin/nodes_conf.yaml
 
 ## Building and adding to PATH (fish)
 
