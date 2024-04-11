@@ -61,4 +61,4 @@ First argument is node name or show stats for all nodes.
 
 5. **Test your setup**:
 
-   You should now be able to run `gacli` from anywhere in your terminal, and it should execute your `gitfeat` script with the specified task name.
+   You should now be able to run `nodestat <nodename>` from anywhere in your terminal, and it should execute your `gitfeat` script with the specified task name.
