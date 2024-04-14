@@ -35,6 +35,7 @@ type Result struct {
 	SyncStatus     string
 	NodeBlockNum   int64
 	LatestBlockNum int64
+	Diff           int64
 	PeersCount     int64
 }
 
@@ -168,6 +169,7 @@ func main() {
 				SyncStatus:     syncStatus,
 				NodeBlockNum:   currentNodeBlockNum,
 				LatestBlockNum: latestBlock,
+				Diff:           latestBlock - currentNodeBlockNum,
 				PeersCount:     peersCountNum,
 			}
 		}(nodeName, node, lp)
@@ -181,6 +183,7 @@ func main() {
 		fmt.Printf("Sync status: %s\n", res.SyncStatus)
 		fmt.Printf("Node block number: %d\n", res.NodeBlockNum)
 		fmt.Printf("Scanner block number: %d\n", res.LatestBlockNum)
+		fmt.Printf("Diff with mainnet: %d\n", res.Diff)
 		if nodeName != "arb" {
 			fmt.Printf("Peers count: %d\n", res.PeersCount)
 		}
