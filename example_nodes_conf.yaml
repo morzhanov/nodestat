@@ -20,7 +20,15 @@ nodes:
     rpc_path: /rpc
     namespace: blockchains
 public_apis:
-  eth: https://api.etherscan.io/api
-  bsc: https://api.bscscan.com/api
-  arb: https://api.arbiscan.io/api
-  poly: https://api.polygonscan.com/api
+  eth:
+    url: https://api.etherscan.io/api
+    apikey: key
+  bsc:
+    url: https://api.bscscan.com/api
+    apikey: key
+  arb:
+    url: https://api.arbiscan.io/api
+    apikey: key
+  poly:
+    url: https://api.polygonscan.com/api
+    apikey: key

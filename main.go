@@ -18,8 +18,13 @@ import (
 
 // NodeConfig represents the structure of nodes configuration
 type NodeConfig struct {
-	Nodes      map[string]Node   `json:"nodes" yaml:"nodes"`
-	PublicApis map[string]string `json:"public_apis" yaml:"public_apis"`
+	Nodes      map[string]Node      `json:"nodes" yaml:"nodes"`
+	PublicApis map[string]PublicAPI `json:"public_apis" yaml:"public_apis"`
+}
+
+type PublicAPI struct {
+	URL    string `json:"url" yaml:"url"`
+	APIKey string `json:"apikey" yaml:"apikey"`
 }
 
 // Node represents the structure of a node configuration
@@ -244,9 +249,9 @@ func callRPC(node Node, localPort int, method string) (interface{}, error) {
 	return result["result"], nil
 }
 
-func fetchLatestBlock(nodeName string, apiUrl string) (int64, error) {
+func fetchLatestBlock(nodeName string, apiConf PublicAPI) (int64, error) {
 	// Make HTTP GET request to the Etherscan API
-	resp, err := http.Get(apiUrl + "?module=proxy&action=eth_blockNumber")
+	resp, err := http.Get(apiConf.URL + "?module=proxy&action=eth_blockNumber&apikey=" + apiConf.APIKey)
 	if err != nil {
 		return 0, err
 	}
